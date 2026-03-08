@@ -237,6 +237,7 @@ export default function Portfolio() {
       <section id="work" className="bg-gray-100 dark:bg-[#0a0a0a] py-32 border-t border-gray-200 dark:border-gray-800/50 relative">
         <div className="max-w-6xl mx-auto px-6 relative z-10">
           <motion.div 
+          
             initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={staggerContainer}
             className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8"
           >
