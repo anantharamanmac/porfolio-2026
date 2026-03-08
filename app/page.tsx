@@ -3,7 +3,8 @@
 import React, { useState, useEffect } from 'react';
 import { motion, useScroll, useTransform, Variants } from 'framer-motion';
 import { useTheme } from 'next-themes';
-import { Sun, Moon, Github, ExternalLink, ArrowRight, Code2, Paintbrush, ShoppingCart, Star } from 'lucide-react';
+// ADDED Download to the imports below
+import { Sun, Moon, Github, ExternalLink, ArrowRight, Code2, Paintbrush, ShoppingCart, Star, Download } from 'lucide-react';
 
 export default function Portfolio() {
   const { theme, setTheme } = useTheme();
@@ -157,6 +158,16 @@ export default function Portfolio() {
             >
               Start a Project <ArrowRight size={20} />
             </motion.a>
+            
+            {/* NEW: Download CV Button */}
+            <motion.a 
+              whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
+              href="/Anantharaman_CV.pdf" 
+              download="Anantharaman_CV.pdf"
+              className="bg-transparent text-gray-900 dark:text-white border-2 border-gray-200 dark:border-gray-800 px-8 py-4 rounded-full font-bold hover:bg-gray-50 dark:hover:bg-gray-900 transition-all flex items-center gap-3"
+            >
+              <Download size={20} /> Download CV
+            </motion.a>
           </motion.div>
         </motion.div>
       </motion.main>
@@ -237,7 +248,6 @@ export default function Portfolio() {
       <section id="work" className="bg-gray-100 dark:bg-[#0a0a0a] py-32 border-t border-gray-200 dark:border-gray-800/50 relative">
         <div className="max-w-6xl mx-auto px-6 relative z-10">
           <motion.div 
-          
             initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={staggerContainer}
             className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8"
           >
@@ -313,7 +323,6 @@ export default function Portfolio() {
           )}
         </div>
       </section>
-
 
       {/* Footer */}
       <footer className="py-16 text-center text-gray-500 dark:text-gray-500 text-base border-t border-gray-200 dark:border-gray-800/50 bg-white dark:bg-[#050505]">
